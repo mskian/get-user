@@ -28,14 +28,16 @@ app.get('/:name', (req, res) => {
         strict: false
     });
     const crushname = [{
-        content: seo_title.replace(/[-]/g, ' ', ) || 'Hello World'
+        content: seo_title.replace(/[-]/g, ' ', ) || 'Hello World',
+        slug: seo_title || 'Hello World'
     }];
     res.json(crushname);
 });
 
 app.use('/', function(req, res) {
     const crushname = [{
-        content: 'Hello World'
+        content: 'Hello World',
+        slug: 'Hello-World'
     }];
     res.json(crushname);
 });

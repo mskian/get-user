@@ -1,0 +1,31 @@
+{
+  "name": "get-user",
+  "version": "1.0.0",
+  "description": "Name Wishing API with Clean input data.",
+  "main": "index.js",
+  "author": "Santhosh Veer",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "action": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mskian/get-user.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mskian/get-user/issues"
+  },
+  "homepage": "https://github.com/mskian/get-user#readme",
+  "keywords": [
+    "names",
+    "wishes"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "slugify": "^1.4.6"
+  }
+}

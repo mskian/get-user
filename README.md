@@ -1,5 +1,7 @@
 # Get User 🤖
 
+![build-test](https://github.com/mskian/get-user/workflows/build-test/badge.svg)  
+
 API for Name Wishing Site
 
 > Supports Multi Language 🌐

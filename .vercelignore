@@ -10,3 +10,4 @@ README.md
 .gitignore
 test.js
 app.js
+renovate.json

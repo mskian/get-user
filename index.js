@@ -27,11 +27,19 @@ app.get('/:name', (req, res) => {
         lower: false,
         strict: false
     });
-    const crushname = [{
-        content: seo_title.replace(/[-]/g, ' ', ) || 'Hello World',
-        slug: seo_title || 'Hello World'
-    }];
-    res.json(crushname);
+    if (crush == 'null') {
+        const crushname = [{
+            content: 'Greetings',
+            slug: 'Greetings'
+        }];
+        res.json(crushname);
+    } else {
+        const crushname = [{
+            content: seo_title.replace(/[-]/g, ' ', ) || 'Hello World',
+            slug: seo_title || 'Hello World'
+        }];
+        res.json(crushname);
+    }
 });
 
 app.use('/', function(req, res) {

@@ -26,6 +26,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "slugify": "^1.6.0"
+    "slugify": "^1.6.5"
   }
 }

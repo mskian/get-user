@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const slugify = require('slugify');
+const apicache = require("apicache");
+const cache = apicache.middleware
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -10,7 +12,7 @@ app.listen(port, function() {
     console.log('listening on port ' + port);
 });
 
-app.get('/:name', (req, res) => {
+app.get('/:name', cache('2 hour'), function(req, res) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
     res.header('Access-Control-Allow-Methods', 'GET');
@@ -48,4 +50,13 @@ app.use('/', function(req, res) {
         slug: 'Hello-World'
     }];
     res.json(crushname);
+});
+
+app.use((err, req, res, next) => {
+    const crushname = [{
+        content: 'Hello World',
+        slug: 'Hello-World'
+    }];
+    if (!err) return next();
+    return res.status(403).json(crushname);
 });
